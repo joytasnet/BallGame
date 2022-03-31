@@ -19,10 +19,10 @@ public class SugawaraMain{
 		for(int i=0; i<n*2 ; i++){
 			int rndBall = new Random().nextInt(balls.length-i)+i;
 			if(i%2==0){
-			mrA[count] = balls[rndBall];//mrAのi番目の部屋に引いたボールを入れる
+				mrA[count] = balls[rndBall];//mrAのi番目の部屋に引いたボールを入れる
 			}else{
-			mrB[count] = balls[rndBall];//mrBのi番目の部屋に引いたボールを入れる
-			count++;
+				mrB[count] = balls[rndBall];//mrBのi番目の部屋に引いたボールを入れる
+				count++;
 			}
 			int tmp = balls[rndBall];//今引いたボールを先頭と入れ替える処理
 			balls[rndBall] = balls[i];
@@ -35,21 +35,23 @@ public class SugawaraMain{
 			mrB[i] = rndBall;//mrBのi番目の部屋に引いたボールを入れる
 			balls[rndBall] = balls[i];
 			balls[i] = tmp;
-		}*/
+			}*/
 
 		//両者のボールの値を比較し勝敗表示
 		int winA=0;
 		int winB=0;
 
 		for(int i=0 ; i<mrA.length ; i++){
+			System.out.printf("%n回戦目",count);
 			System.out.printf("%s:%d / %s:%d ",nameA,mrA[i],nameB,mrB[i]);
-			System.out.println(mrA[i]>mrB[i] ? "Aさんの勝ち" : "Bさんの勝ち");
+			System.out.print(mrA[i]>mrB[i] ? nameA+"の勝ち" : nameB+"の勝ち");
 			System.out.println();
 			if(mrA[i]>mrB[i]){
 				winA++;
 			}else{
 				winB++;
 			}
+			count++;
 		}
 		//勝った回数と総合勝者の表示
 		System.out.printf("%d : %d%n",winA,winB);
