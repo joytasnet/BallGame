@@ -2,6 +2,7 @@ import java.util.*;
 public class SugawaraMain{
 	public static void main(String[] args){
 		int n =5;
+		int count =0;
 		String nameA ="Aさん";
 		String nameB ="Bさん";
 
@@ -14,22 +15,27 @@ public class SugawaraMain{
 		//AさんBさん交互に5回ずつランダムに[]Bagから取り出す
 		//まずはAさん
 		int[] mrA = new int[n];
-		for(int i=0; i<mrA.length ; i++){
+		int[] mrB = new int[n];
+		for(int i=0; i<n*2 ; i++){
 			int rndBall = new Random().nextInt(balls.length-i)+i;
-			mrA[i] = rndBall;//mrAのi番目の部屋に引いたボールを入れる
+			if(i%2==0){
+			mrA[count] = balls[rndBall];//mrAのi番目の部屋に引いたボールを入れる
+			}else{
+			mrB[count] = balls[rndBall];//mrBのi番目の部屋に引いたボールを入れる
+			count++;
+			}
 			int tmp = balls[rndBall];//今引いたボールを先頭と入れ替える処理
 			balls[rndBall] = balls[i];
 			balls[i] = tmp;
 		}
 		//次はBさん
-		int[] mrB = new int[n];
-		for(int i=0; i<mrB.length ; i++){
+		/*for(int i=0; i<mrB.length ; i++){
 			int rndBall = new Random().nextInt(balls.length-i)+i;
-			mrB[i] = rndBall;//mrBのi番目の部屋に引いたボールを入れる
 			int tmp = balls[rndBall];//今引いたボールを先頭と入れ替える処理
+			mrB[i] = rndBall;//mrBのi番目の部屋に引いたボールを入れる
 			balls[rndBall] = balls[i];
 			balls[i] = tmp;
-		}
+		}*/
 
 		//両者のボールの値を比較し勝敗表示
 		int winA=0;
@@ -46,7 +52,6 @@ public class SugawaraMain{
 			}
 		}
 		//勝った回数と総合勝者の表示
-		//フラグ
 		System.out.printf("%d : %d%n",winA,winB);
 		if(winA > winB){
 			System.out.printf("%sの勝ちです！%n",nameA);
