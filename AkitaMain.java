@@ -11,14 +11,23 @@ public class AkitaMain{
 			nums[i] = nums[rnd];
 			nums[rnd] = temp;
 		}
-		for(int i =0;i<10;i +=2){
+		int gameCount =5;
+		int aWin = 0;
+		int bWin = 0;
+		for(int i =0;i<gameCount*2;i +=2){
 			for(int j =i;j<i+2;j +=2){
 				System.out.println(i/2+1+"回戦");
 				int a = nums[j];
 				int b = nums[j+1];
 				System.out.printf("A:%d,B:%d…",a,b);
 				System.out.println(a>b?"Aの勝ち":"Bの勝ち");
+				if(a>b){
+					aWin++;
+				}else{
+					bWin++;
+				}
 			}
 		}
+				System.out.println(aWin+"対"+bWin+"で"+(aWin>bWin?"Aの勝ち":"Bの勝ち"));
 	}
 }
