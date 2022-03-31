@@ -2,8 +2,8 @@ import java.util.*;
 public class AkitaMain{
 	public static void main(String[] args){
 		int[] nums = new int[100];
-		for(int i =1;i<=100;i++){
-			nums[i]=i;
+		for(int i =0;i<100;i++){
+			nums[i]=i+1;
 		}
 		for(int i =0;i<nums.length-1;i++){
 			int rnd = new Random().nextInt(nums.length-i)+i;
