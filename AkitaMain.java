@@ -28,6 +28,6 @@ public class AkitaMain{
 				}
 			}
 		}
-				System.out.println(aWin+"対"+bWin+"で"+(aWin>bWin?"Aの勝ち":"Bの勝ち"));
+		System.out.printf("%d対%dで%sの勝ち%n",aWin,bWin,(aWin>bWin?"A":"B"));
 	}
 }
