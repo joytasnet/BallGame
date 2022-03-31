@@ -23,7 +23,7 @@ public class NagasuMain{
 		int winA=0;
 		int winB=0;
 		for(int i=0;i<(playerA.length + playerB.length)/2;i++){
-			System.out.printf(i +1 +"回戦%nA:%d,B:%d",playerA[i],playerB[i]);
+			System.out.printf(i +1 +"回戦%nA:%3d,B:%3d",playerA[i],playerB[i]);
 			if(playerA[i] > playerB[i]){
 				winA += 1;
 				System.out.println(" Aの勝ち");
